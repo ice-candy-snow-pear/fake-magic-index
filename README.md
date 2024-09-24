@@ -8,7 +8,7 @@
 
 额外转存路径的默认格式为：
 
-/{host}_{id}_{title}/{date}_{time}
+/{host}\_{id}\_{title}/{date}\_{time}
 - 字段解释:
   - {host}: 上个页面的域名
   - {id}: 上个页面的url id, 一般是一串数字
