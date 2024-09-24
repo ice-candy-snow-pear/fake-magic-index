@@ -6,7 +6,6 @@
 // @namespace   cangku.moe
 // @match       *://pan.baidu.com/s/*
 // @match       *://cangku.moe/*
-// @grant       unsafeWindow
 // @grant       GM_setValue
 // @grant       GM_getValue
 // @require     https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js
