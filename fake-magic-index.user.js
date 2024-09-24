@@ -28,7 +28,7 @@
   const baiduMatch = /pan.baidu.com\/s\/([A-Za-z0-9]+)/;
   const dateMatch = /(\d{4}-\d{2}-\d{2})T(\d{2}:\d{2}:\d{2})/;
   const illegalPathPattern1 = /(\s+)?\/(\s+)?/g;
-  const illegalPathPattern2 = /[\/\\":*?<>|]/g;
+  const illegalPathPattern2 = /[\\":*?<>|]/g;
   const createDirApi = "/api/create?";
   const transferApi = "/share/transfer?";
   const TAG = "伪魔禁";
