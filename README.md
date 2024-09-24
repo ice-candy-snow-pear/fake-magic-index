@@ -16,7 +16,7 @@
   - {date}: 打开网盘链接的日期
   - {time}: 打开网盘链接的时间
  
-需要自定义格式在这行修改即可
+需要自定义格式请修改代码内的这行:
 ```javascript
 const pathPattern = "/{host}_{id}_{title}/{date}_{time}";
 ```
