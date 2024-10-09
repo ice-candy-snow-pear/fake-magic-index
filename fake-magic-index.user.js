@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        伪魔禁
 // @description 转存到网盘时根据上个页面的信息自动补充转存路径，当前支持仓库和度盘
-// @version     0.1.0
+// @version     0.1.1
 // @author      🧊🍬❄️🍐
 // @namespace   cangku.moe
 // @match       *://pan.baidu.com/s/*
@@ -26,7 +26,6 @@
   const cangkuHost = "cangku.moe";
   const cangkuMatch = /cangku.moe\/archives\/(\d+)/;
   const baiduMatch = /pan.baidu.com\/s\/([A-Za-z0-9]+)/;
-  const dateMatch = /(\d{4}-\d{2}-\d{2})T(\d{2}:\d{2}:\d{2})/;
   const illegalPathPattern1 = /(\s+)?\/(\s+)?/g;
   const illegalPathPattern2 = /[\\":*?<>|]/g;
   const createDirApi = "/api/create?";
@@ -149,10 +148,8 @@
         if (baiduId) {
           baiduId = baiduId[1];
           let date = new Date();
-          let isoString = date.toISOString();
-          date = isoString.match(dateMatch);
-          metaData.date = date[1];
-          metaData.time = date[2].replaceAll(":", "：");
+          metaData.date = date.toLocaleDateString().replaceAll("/", "-");
+          metaData.time = date.toLocaleTimeString().replaceAll(":", "：");
           metaData.title = $(
             "#post > div > div.post-wrap > article > div.header > div.title > h1 > a"
           )
